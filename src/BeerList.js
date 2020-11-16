@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
-
+import Like from './Like'
 
 const List = (props) => {
   const [like, setLike] = useState({
@@ -22,11 +22,7 @@ const List = (props) => {
             <img src = {props.item.image_url} alt="Logo" style={{height:"40pt", marginLeft:"15pt"}} />
           </div>
           </Accordion.Toggle>
-          <Button 
-            onClick= {()=>setLike((like) => !like)} 
-            style={{marginLeft:"20pt"}} 
-            variant="info">Like
-          </Button>
+          <Like likeIt = {()=>setLike((like) => !like)} />
         </Card.Header>
         <Accordion.Collapse eventKey ="0">
           <Card.Body>
